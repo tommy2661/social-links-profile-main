@@ -1,22 +1,9 @@
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/static/Inter-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/static/Inter-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('./assets/fonts/static/Inter-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+:root {
+    --color-bg: #141414;
+    --color-card: #1f1f1f;
+    --color-accent: #cef25c;
+    --color-button: #333333;
+    --color-text: white;
 }
 
 * {
@@ -27,59 +14,61 @@
 }
 
 body {
-    background-color: #141414;
+    background-color: var(--color-bg);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 24px;
+    padding: 1.5rem;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    background-color: #1f1f1f;
+    background-color: var(--color-card);
     align-items: center;
-    padding: 32px;
-    border-radius: 15px;
-    width: min(100%, 400px);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: min(100%, 25rem);
 }
 
 .card h1 {
-    color: white;
+    color: var(--color-text);
     font-weight: 600;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-block-start: 1.875rem;
+    margin-block-end: 1rem;
 }
 
 .card h2 {
-    color: #cef25c;
-    margin-bottom: 30px;
+    color: var(--color-accent);
+    margin-block-end: 1.875rem;
 }
 
 .card p {
-    color: white;
+    color: var(--color-text);
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-block-end: 1.875rem;
 }
 
 .link button {
-    background-color: #333333;
+    background-color: var(--color-button);
     border: none;
-    color: white;
+    color: var(--color-text);
     width: 100%;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 1rem;
+    border-radius: 0.625rem;
     font-weight: 700;
 }
+
 .link button:hover {
-    background-color: #cef25c;
-    color: #333333; 
+    background-color: var(--color-accent);
+    color: var(--color-button);
 }
 
 .card img {
-    width: 150px;
+    width: 9.375rem;
     border-radius: 50%;
 }
 
@@ -87,15 +76,11 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 16px;
+    gap: 1rem;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 30em) {
     .card {
-        padding: 24px;
-    }
-
-    .card h1 {
-        font-size: 24px;
+        padding: 2rem;
     }
 }
