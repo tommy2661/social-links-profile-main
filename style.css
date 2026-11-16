@@ -20,7 +20,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: clamp(1rem, 4vw, 1.5rem);
 }
 
 .card {
@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     background-color: var(--color-card);
     align-items: center;
-    padding: 1.5rem;
+    padding: clamp(1.5rem, 5vw, 2rem);
     border-radius: 1rem;
     width: min(100%, 25rem);
 }
@@ -79,8 +79,3 @@ body {
     gap: 1rem;
 }
 
-@media (min-width: 30em) {
-    .card {
-        padding: 2rem;
-    }
-}
