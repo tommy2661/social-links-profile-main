@@ -1,9 +1,35 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/static/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/static/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/static/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 :root {
     --color-bg: #141414;
     --color-card: #1f1f1f;
     --color-accent: #cef25c;
     --color-button: #333333;
     --color-text: white;
+
+    --space-sm: 1rem;
+    --space-lg: clamp(1.25rem, 4vw, 1.875rem);
+    --page-padding: clamp(1rem, 4vw, 1.5rem);
+    --card-padding: clamp(1.5rem, 5vw, 2rem);
 }
 
 * {
@@ -20,51 +46,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: clamp(1rem, 4vw, 1.5rem);
+    padding: var(--page-padding);
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-card);
     align-items: center;
-    padding: clamp(1.5rem, 5vw, 2rem);
+    background-color: var(--color-card);
+    padding: var(--card-padding);
     border-radius: 1rem;
     width: min(100%, 25rem);
-}
-
-.card h1 {
-    color: var(--color-text);
-    font-weight: 600;
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    margin-block-start: 1.875rem;
-    margin-block-end: 1rem;
-}
-
-.card h2 {
-    color: var(--color-accent);
-    margin-block-end: 1.875rem;
-}
-
-.card p {
-    color: var(--color-text);
-    font-weight: 400;
-    margin-block-end: 1.875rem;
-}
-
-.link button {
-    background-color: var(--color-button);
-    border: none;
-    color: var(--color-text);
-    width: 100%;
-    padding: 1rem;
-    border-radius: 0.625rem;
-    font-weight: 700;
-}
-
-.link button:hover {
-    background-color: var(--color-accent);
-    color: var(--color-button);
 }
 
 .card img {
@@ -72,10 +64,45 @@ body {
     border-radius: 50%;
 }
 
+.card h1 {
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-block-start: var(--space-lg);
+    margin-block-end: var(--space-sm);
+}
+
+.card h2 {
+    color: var(--color-accent);
+    margin-block-end: var(--space-lg);
+}
+
+.card p {
+    color: var(--color-text);
+    font-weight: 400;
+    margin-block-end: var(--space-lg);
+}
+
 .card .link {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 1rem;
+    gap: var(--space-sm);
 }
 
+.link button {
+    background-color: var(--color-button);
+    border: none;
+    color: var(--color-text);
+    width: 100%;
+    padding: var(--space-sm);
+    border-radius: 0.625rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.link button:hover,
+.link button:focus-visible {
+    background-color: var(--color-accent);
+    color: var(--color-button);
+}
